@@ -5,9 +5,9 @@ import asyncio
 
 async def main():
     st.set_page_config(
-        page_title="Phising Detector",
+        page_title="Phishing Detector",
     )
-    st.title("Phising Classifier")
+    st.title("Phishing Classifier")
 
     input = st.text_input("Enter the Link")
 
