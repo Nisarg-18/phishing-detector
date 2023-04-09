@@ -4,3 +4,5 @@ pandas==1.5.0
 python_whois==0.8.0
 streamlit==1.11.0
 whois==0.9.27
+sklearn
+scikit-learn
