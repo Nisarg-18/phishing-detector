@@ -20,6 +20,6 @@ async def main():
             st.header("It is a safe link")
 
 if __name__ == '__main__':
-    with open('model.pkl', 'rb') as file:
+    with open('./model/model.pkl', 'rb') as file:
         model = pickle.load(file)
     asyncio.run(main())
