@@ -12,12 +12,16 @@ async def main():
     input = st.text_input("Enter the Link")
 
     if st.button('Predict'):
-        final_input = await extract_features(input)    
-        result =   model["model"].predict(final_input)
-        if result[0] == 1:
-            st.header("It is an unsafe link")
+        if(input.startswith('http')):
+            final_input = await extract_features(input)    
+            result =   model["model"].predict(final_input)
+            if result[0] == 1:
+                st.header("It is an unsafe link")
+            else:
+                st.header("It is a safe link")
         else:
-            st.header("It is a safe link")
+            st.error("Please enter the complete link including http or https")
+    st.caption("Please enter the full URL including http or https")
 
 if __name__ == '__main__':
     with open('./model/model.pkl', 'rb') as file:
